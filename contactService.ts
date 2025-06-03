@@ -5,11 +5,12 @@ export async function identifyContact(email?: string, phoneNumber?: string) {
 
   const contacts = await prisma.contact.findMany({
     where: {
-      OR: [
-        email ? { email } : undefined,
-        phoneNumber ? { phoneNumber } : undefined,
-      ].filter(Boolean)
-    },
+     OR: email && phoneNumber
+  ? [{ email }, { phoneNumber }]
+  : email
+  ? [{ email }]
+  : [{ phoneNumber }]
+
     orderBy: { createdAt: 'asc' }
   });
 
