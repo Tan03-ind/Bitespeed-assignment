@@ -4,8 +4,8 @@ This project implements the `/identify` API endpoint for Bitespeed's Identity Re
 
 ## 🚀 Live Endpoint
 
-> https://your-app-name.onrender.com/identify  
-(Replace with your actual Render URL after deployment)
+> https://bitespeed-assignment-ti6r.onrender.com  
+
 
 ## 📦 Tech Stack
 
