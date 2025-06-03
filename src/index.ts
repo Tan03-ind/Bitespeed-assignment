@@ -10,8 +10,12 @@ app.post('/identify', async (req, res) => {
     const contact = await identifyContact(email, phoneNumber);
     res.status(200).json({ contact });
   } catch (error) {
+  if (error instanceof Error) {
     res.status(400).json({ error: error.message });
+  } else {
+    res.status(400).json({ error: 'An unknown error occurred.' });
   }
+}
 });
 
 const PORT = process.env.PORT || 3000;
