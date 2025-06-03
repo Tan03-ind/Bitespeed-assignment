@@ -3,7 +3,9 @@ import { identifyContact } from './contactService';
 
 const app = express();
 app.use(express.json());
-
+app.get('/', (req, res) => {
+  res.send('Server is running 🚀');
+});
 app.post('/identify', async (req, res) => {
   const { email, phoneNumber } = req.body;
   try {
