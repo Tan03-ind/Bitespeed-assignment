@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("postgresql://bitespeed_backend_task_uz6t_user:K493ukv1g8dVpE3uDHI6tN5fBnraNi9G@dpg-d0vd0v24d50c73ee9i30-a/bitespeed_backend_task_uz6t")
+}
+
+model Contact {
+  id             Int       @id @default(autoincrement())
+  phoneNumber    String?   @db.VarChar(255)
+  email          String?   @db.VarChar(255)
+  linkedId       Int?
+  linkPrecedence String    @default("primary")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+}
