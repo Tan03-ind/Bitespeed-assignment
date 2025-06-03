@@ -9,8 +9,8 @@ export async function identifyContact(email?: string, phoneNumber?: string) {
   ? [{ email }, { phoneNumber }]
   : email
   ? [{ email }]
-  : [{ phoneNumber }]
-
+  : [{ phoneNumber }],
+    },
     orderBy: { createdAt: 'asc' }
   });
 
